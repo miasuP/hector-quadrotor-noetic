@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <!-- 加载自定义的世界文件 -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+  <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+    <!-- <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_with_cam.gazebo.xacro"/> -->
+    <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_hokuyo_utm30lx.gazebo.xacro"/> 
+  </include>
+
+  <!-- 引用 spawn_obstacles.launch 文件，传递10个障碍物的名称和位置 -->
+  <include file="$(find hector_quadrotor_gazebo)/launch/spawn_obstacle.launch">
+    <arg name="unit_cylinder_0" value="unit_cylinder_0" />
+    <arg name="unit_cylinder_1" value="unit_cylinder_1" />
+    <arg name="unit_cylinder_2" value="unit_cylinder_2" />
+    <arg name="unit_cylinder_3" value="unit_cylinder_3" />
+    <arg name="unit_cylinder_4" value="unit_cylinder_4" />
+    <arg name="unit_cylinder_5" value="unit_cylinder_5" />
+    <arg name="unit_cylinder_6" value="unit_cylinder_6" />
+    <arg name="unit_cylinder_7" value="unit_cylinder_7" />
+    <arg name="unit_cylinder_8" value="unit_cylinder_8" />
+    <arg name="unit_cylinder_9" value="unit_cylinder_9" />
+
+    <arg name="unit_cylinder_0_x" value="5.0"/>
+    <arg name="unit_cylinder_0_y" value="5.0"/>
+    <arg name="unit_cylinder_0_z" value="1.0"/>
+
+    <arg name="unit_cylinder_1_x" value="7.0"/>
+    <arg name="unit_cylinder_1_y" value="6.0"/>
+    <arg name="unit_cylinder_1_z" value="1.0"/>
+
+    <arg name="unit_cylinder_2_x" value="9.0"/>
+    <arg name="unit_cylinder_2_y" value="7.0"/>
+    <arg name="unit_cylinder_2_z" value="1.0"/>
+
+    <arg name="unit_cylinder_3_x" value="6.0"/>
+    <arg name="unit_cylinder_3_y" value="9.0"/>
+    <arg name="unit_cylinder_3_z" value="1.0"/>
+
+    <arg name="unit_cylinder_4_x" value="3.0"/>
+    <arg name="unit_cylinder_4_y" value="4.0"/>
+    <arg name="unit_cylinder_4_z" value="1.0"/>
+
+    <arg name="unit_cylinder_5_x" value="2.0"/>
+    <arg name="unit_cylinder_5_y" value="8.0"/>
+    <arg name="unit_cylinder_5_z" value="1.0"/>
+
+    <arg name="unit_cylinder_6_x" value="8.0"/>
+    <arg name="unit_cylinder_6_y" value="3.0"/>
+    <arg name="unit_cylinder_6_z" value="1.0"/>
+
+    <arg name="unit_cylinder_7_x" value="1.0"/>
+    <arg name="unit_cylinder_7_y" value="1.0"/>
+    <arg name="unit_cylinder_7_z" value="1.0"/>
+
+    <arg name="unit_cylinder_8_x" value="4.0"/>
+    <arg name="unit_cylinder_8_y" value="6.0"/>
+    <arg name="unit_cylinder_8_z" value="1.0"/>
+
+    <arg name="unit_cylinder_9_x" value="5.5"/>
+    <arg name="unit_cylinder_9_y" value="4.5"/>
+    <arg name="unit_cylinder_9_z" value="1.0"/>
+  </include>
+
+</launch>

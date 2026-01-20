@@ -175,3 +175,21 @@ material Hector/BlueBrushedAluminum
   }
 }
 
+material FloorMaterial
+{
+    technique
+    {
+        pass
+        {
+            ambient 0.6 0.6 0.6 1
+            diffuse 0.8 0.8 0.8 1
+            specular 0.2 0.2 0.2 1
+            emissive 0 0 0 0
+            texture_unit
+            {
+                texture bricks.png
+                tex_address_mode wrap
+            }
+        }
+    }
+}

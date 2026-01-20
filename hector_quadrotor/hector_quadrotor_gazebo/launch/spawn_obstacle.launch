@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- 定义障碍物数量 -->
+  <arg name="num_obstacles" default="10" />
+  
+  <!-- 使用参数化方式为每个障碍物定义模型名称和位置 -->
+  <arg name="x_offset" default="2.0" />
+  <arg name="y_offset" default="2.0" />
+
+  <!-- 定义障碍物的模型 -->
+  <arg name="model" default="unit_cylinder" />
+
+  <!-- 定义每个障碍物的位置和名称 -->
+  <arg name="unit_cylinder_0" default="unit_cylinder_0" />
+  <arg name="unit_cylinder_1" default="unit_cylinder_1" />
+  <arg name="unit_cylinder_2" default="unit_cylinder_2" />
+  <arg name="unit_cylinder_3" default="unit_cylinder_3" />
+  <arg name="unit_cylinder_4" default="unit_cylinder_4" />
+  <arg name="unit_cylinder_5" default="unit_cylinder_5" />
+  <arg name="unit_cylinder_6" default="unit_cylinder_6" />
+  <arg name="unit_cylinder_7" default="unit_cylinder_7" />
+  <arg name="unit_cylinder_8" default="unit_cylinder_8" />
+  <arg name="unit_cylinder_9" default="unit_cylinder_9" />
+
+  <!-- 定义每个障碍物的位置 -->
+  <arg name="unit_cylinder_0_x" default="5.0"/>
+  <arg name="unit_cylinder_0_y" default="5.0"/>
+  <arg name="unit_cylinder_0_z" default="0.5"/>
+
+  <arg name="unit_cylinder_1_x" default="7.0"/>
+  <arg name="unit_cylinder_1_y" default="6.0"/>
+  <arg name="unit_cylinder_1_z" default="0.5"/>
+
+  <arg name="unit_cylinder_2_x" default="9.0"/>
+  <arg name="unit_cylinder_2_y" default="7.0"/>
+  <arg name="unit_cylinder_2_z" default="0.5"/>
+
+  <arg name="unit_cylinder_3_x" default="6.0"/>
+  <arg name="unit_cylinder_3_y" default="9.0"/>
+  <arg name="unit_cylinder_3_z" default="0.5"/>
+
+  <arg name="unit_cylinder_4_x" default="3.0"/>
+  <arg name="unit_cylinder_4_y" default="4.0"/>
+  <arg name="unit_cylinder_4_z" default="0.5"/>
+
+  <arg name="unit_cylinder_5_x" default="2.0"/>
+  <arg name="unit_cylinder_5_y" default="8.0"/>
+  <arg name="unit_cylinder_5_z" default="0.5"/>
+
+  <arg name="unit_cylinder_6_x" default="8.0"/>
+  <arg name="unit_cylinder_6_y" default="3.0"/>
+  <arg name="unit_cylinder_6_z" default="0.5"/>
+
+  <arg name="unit_cylinder_7_x" default="1.0"/>
+  <arg name="unit_cylinder_7_y" default="1.0"/>
+  <arg name="unit_cylinder_7_z" default="0.5"/>
+
+  <arg name="unit_cylinder_8_x" default="4.0"/>
+  <arg name="unit_cylinder_8_y" default="6.0"/>
+  <arg name="unit_cylinder_8_z" default="0.5"/>
+
+  <arg name="unit_cylinder_9_x" default="5.5"/>
+  <arg name="unit_cylinder_9_y" default="4.5"/>
+  <arg name="unit_cylinder_9_z" default="0.5"/>
+
+  <!-- 通过 spawn_model 插件动态加载模型 -->
+  <node name="spawn_obstacle_0" pkg="gazebo_ros" type="spawn_model" args="-file $(find hector_quadrotor_gazebo)/launch/model.sdf -sdf -model $(arg unit_cylinder_0) -x $(arg unit_cylinder_0_x) -y $(arg unit_cylinder_0_y) -z $(arg unit_cylinder_0_z)" />
+  <node name="spawn_obstacle_1" pkg="gazebo_ros" type="spawn_model" args="-file $(find hector_quadrotor_gazebo)/launch/model.sdf -sdf -model $(arg unit_cylinder_1) -x $(arg unit_cylinder_1_x) -y $(arg unit_cylinder_1_y) -z $(arg unit_cylinder_1_z)" />
+  <node name="spawn_obstacle_2" pkg="gazebo_ros" type="spawn_model" args="-file $(find hector_quadrotor_gazebo)/launch/model.sdf -sdf -model $(arg unit_cylinder_2) -x $(arg unit_cylinder_2_x) -y $(arg unit_cylinder_2_y) -z $(arg unit_cylinder_2_z)" />
+  <node name="spawn_obstacle_3" pkg="gazebo_ros" type="spawn_model" args="-file $(find hector_quadrotor_gazebo)/launch/model.sdf -sdf -model $(arg unit_cylinder_3) -x $(arg unit_cylinder_3_x) -y $(arg unit_cylinder_3_y) -z $(arg unit_cylinder_3_z)" />
+  <node name="spawn_obstacle_4" pkg="gazebo_ros" type="spawn_model" args="-file $(find hector_quadrotor_gazebo)/launch/model.sdf -sdf -model $(arg unit_cylinder_4) -x $(arg unit_cylinder_4_x) -y $(arg unit_cylinder_4_y) -z $(arg unit_cylinder_4_z)" />
+  <node name="spawn_obstacle_5" pkg="gazebo_ros" type="spawn_model" args="-file $(find hector_quadrotor_gazebo)/launch/model.sdf -sdf -model $(arg unit_cylinder_5) -x $(arg unit_cylinder_5_x) -y $(arg unit_cylinder_5_y) -z $(arg unit_cylinder_5_z)" />
+  <node name="spawn_obstacle_6" pkg="gazebo_ros" type="spawn_model" args="-file $(find hector_quadrotor_gazebo)/launch/model.sdf -sdf -model $(arg unit_cylinder_6) -x $(arg unit_cylinder_6_x) -y $(arg unit_cylinder_6_y) -z $(arg unit_cylinder_6_z)" />
+  <node name="spawn_obstacle_7" pkg="gazebo_ros" type="spawn_model" args="-file $(find hector_quadrotor_gazebo)/launch/model.sdf -sdf -model $(arg unit_cylinder_7) -x $(arg unit_cylinder_7_x) -y $(arg unit_cylinder_7_y) -z $(arg unit_cylinder_7_z)" />
+  <node name="spawn_obstacle_8" pkg="gazebo_ros" type="spawn_model" args="-file $(find hector_quadrotor_gazebo)/launch/model.sdf -sdf -model $(arg unit_cylinder_8) -x $(arg unit_cylinder_8_x) -y $(arg unit_cylinder_8_y) -z $(arg unit_cylinder_8_z)" />
+  <node name="spawn_obstacle_9" pkg="gazebo_ros" type="spawn_model" args="-file $(find hector_quadrotor_gazebo)/launch/model.sdf -sdf -model $(arg unit_cylinder_9) -x $(arg unit_cylinder_9_x) -y $(arg unit_cylinder_9_y) -z $(arg unit_cylinder_9_z)" />
+
+</launch>

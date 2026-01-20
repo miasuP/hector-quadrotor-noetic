@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="wall">
+    <!-- Front Wall (positive y-axis) -->
+    <pose>0 6.5 1 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>25 0.4 3</size>  <!-- 长度 13 米，厚度 0.1 米，高度 3 米 -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>25 0.3 3</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+  <model name="wall2">
+    <!-- Right Wall (positive x-axis) -->
+    <pose>11.5 0 1 0 0 1.5708</pose>  <!-- Rotate 90 degrees (pi/2) around Z-axis -->
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>33 0.4 3</size>  <!-- 长度 23 米，厚度 0.1 米，高度 3 米 -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>33 0.4 3</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+  <model name="wall3">
+    <!-- Back Wall (negative y-axis) -->
+    <pose>0 -6.5 1 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>25 0.4 3</size>  <!-- 长度 13 米，厚度 0.1 米，高度 3 米 -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>25 0.4 3</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+  <model name="wall4">
+    <!-- Left Wall (negative x-axis) -->
+    <pose>-11.5 0 1 0 0 -1.5708</pose>  <!-- Rotate -90 degrees (-pi/2) around Z-axis -->
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>33 0.4 3</size>  <!-- 长度 23 米，厚度 0.1 米，高度 3 米 -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>33 0.4 3</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

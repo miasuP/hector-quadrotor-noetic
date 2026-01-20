@@ -228,7 +228,7 @@ public:
 
       // flip over?
       if (motors_running_ && load_factor < 0.0) {
-        motors_running_ = false;
+        motors_running_ = true;
         ROS_WARN_NAMED("twist_controller", "Shutting down motors due to flip over!");
       }
     }
